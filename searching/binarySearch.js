@@ -1,3 +1,4 @@
+/*Write a function to implement binary search of an array of numbers*/ 
 function binarySearch(arr, key) {
     if (arr.length < 1) {
         return -1;
