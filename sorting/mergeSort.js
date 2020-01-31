@@ -35,6 +35,18 @@ function mergeArray(arr1, arr2) {
     return newArr;
 }
 
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+
+    return mergeArray(left, right);
+    
+}
 
 
-console.log(mergeArray([-1,0,10,12,89],[-10,1,3,4,90]))
+
+// console.log(mergeArray([-1,0,10,12,89],[-10,1,3,4,90]))
+console.log(mergeSort([-1,-10,10,100,2,9,7]))
