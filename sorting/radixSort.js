@@ -20,3 +20,22 @@ function mostDigits(nums) {
 // console.log(getDigit(-09798, 5));
 // console.log(digitLength(-9273298));
 // console.log(mostDigits([87,-987,8759]))
+
+// Works only for +ive numbers
+function radixSort(arr) {
+    let maximumDigits = mostDigits(arr);
+
+    for (let i = 0; i < maximumDigits; i++){
+        let buckets = Array.from({ length: 10 }, () => []);
+        
+
+        for (let j = 0; j < arr.length; j++){
+            buckets[getDigit(arr[j],i)].push(arr[j]);
+        }
+
+        arr = [].concat(...buckets);
+    }
+    return arr;
+}
+
+console.log(radixSort([11, 10, 0, 8, 976, 9861]));
